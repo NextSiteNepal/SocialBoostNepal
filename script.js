@@ -396,7 +396,7 @@ orderForm.addEventListener('submit', (e) => {
   // Build WhatsApp message
   const message = `Hi! I'd like to place an order:\n\n👤 Name: ${name}\n📱 Phone: ${phone}\n🎯 Service: ${service}\n🔗 Link: ${link}\n📊 Quantity: ${quantity}`;
 
-  const waUrl = `https://wa.me/9779800000000?text=${encodeURIComponent(message)}`;
+  const waUrl = `https://wa.me/9779843022602?text=${encodeURIComponent(message)}`;
 
   // Show toast
   showToast('Order Ready! 🚀', 'Redirecting to WhatsApp to confirm your order...');
