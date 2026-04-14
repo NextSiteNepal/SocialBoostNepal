@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Boost Nepal | #1 Digital Growth Platform in Nepal</title>
+  <meta name="description" content="Boost your social presence in Nepal with followers, likes, views, and OTT subscriptions. Trusted by 10,000+ customers across Nepal." />
+  <link rel="icon" href="https://imgur.com/a/atxXwPM" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#050508', 800: '#0a0a12', 700: '#0f0f1a', 600: '#151525', 500: '#1a1a2e' },
+            neon: { purple: '#8b5cf6', blue: '#3b82f6', green: '#10b981', pink: '#ec4899', cyan: '#06b6d4' },
+            glass: { light: 'rgba(255,255,255,0.05)', medium: 'rgba(255,255,255,0.08)', heavy: 'rgba(255,255,255,0.12)' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-dark-900 text-white font-body antialiased overflow-x-hidden">
+
+  <!-- PARTICLE CANVAS -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-purple to-neon-blue flex items-center justify-center shadow-lg shadow-neon-purple/30 group-hover:shadow-neon-purple/50 transition-shadow duration-300">
+            <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+          </div>
+          <div>
+            <span class="text-lg font-display font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">SOCIAL BOOST</span>
+            <span class="text-lg font-display font-bold text-neon-purple"> NEPAL</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#pricing" class="nav-link">Pricing</a>
+          <a href="#features" class="nav-link">Why Us</a>
+          <a href="#reviews" class="nav-link">Reviews</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="#order" class="btn-ghost">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+            Order Now
+          </a>
+          <a href="https://wa.me/9779843022602" target="_blank" class="btn-primary">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            WhatsApp
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-xl bg-glass-light border border-white/5 hover:bg-glass-medium transition-colors">
+          <i data-lucide="menu" class="w-5 h-5" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden hidden absolute top-full left-0 right-0 bg-dark-800/95 backdrop-blur-2xl border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-6 space-y-2">
+        <a href="#services" class="mobile-nav-link">Services</a>
+        <a href="#pricing" class="mobile-nav-link">Pricing</a>
+        <a href="#features" class="mobile-nav-link">Why Us</a>
+        <a href="#reviews" class="mobile-nav-link">Reviews</a>
+        <a href="#faq" class="mobile-nav-link">FAQ</a>
+        <div class="pt-4 flex flex-col gap-3">
+          <a href="#order" class="btn-ghost w-full justify-center">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+            Order Now
+          </a>
+          <a href="https://wa.me/9779843022602" target="_blank" class="btn-primary w-full justify-center">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <!-- Glow Orbs -->
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-glow hero-glow-3"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left Content -->
+        <div class="text-center lg:text-left">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-purple/10 border border-neon-purple/20 text-neon-purple text-sm font-medium mb-6 animate-fade-in-up">
+            <span class="w-2 h-2 rounded-full bg-neon-green animate-pulse"></span>
+            Trusted by 10,000+ Customers in Nepal
+          </div>
+
+          <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight mb-6 animate-fade-in-up animation-delay-200">
+            Boost Your
+            <span class="relative inline-block">
+              <span class="bg-gradient-to-r from-neon-purple via-neon-pink to-neon-blue bg-clip-text text-transparent">Social Presence</span>
+              <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none"><path d="M2 8c60-8 120-8 180-4s80 4 116 0" stroke="url(#grad1)" stroke-width="3" stroke-linecap="round"/><defs><linearGradient id="grad1" x1="0" y1="0" x2="300" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs></svg>
+            </span>
+            in Nepal 🚀
+          </h1>
+
+          <p class="text-lg sm:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-up animation-delay-400">
+            Followers, Likes, Views, OTT Subscriptions & more — delivered instantly with premium quality. The #1 digital growth platform trusted across Nepal.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10 animate-fade-in-up animation-delay-600">
+            <a href="#order" class="btn-primary btn-lg group">
+              <i data-lucide="rocket" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
+              Start Growing Now
+              <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+            <a href="#services" class="btn-ghost btn-lg">
+              <i data-lucide="play-circle" class="w-5 h-5"></i>
+              Explore Services
+            </a>
+          </div>
+
+          <!-- Stats Row -->
+          <div class="grid grid-cols-3 gap-4 sm:gap-6 animate-fade-in-up animation-delay-800">
+            <div class="glass-card p-3 sm:p-4 rounded-2xl text-center">
+              <div class="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent counter" data-target="10000">0</div>
+              <div class="text-xs sm:text-sm text-gray-500 mt-1">Happy Clients</div>
+            </div>
+            <div class="glass-card p-3 sm:p-4 rounded-2xl text-center">
+              <div class="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-neon-green to-neon-cyan bg-clip-text text-transparent counter" data-target="50">0</div>
+              <div class="text-xs sm:text-sm text-gray-500 mt-1">Services</div>
+            </div>
+            <div class="glass-card p-3 sm:p-4 rounded-2xl text-center">
+              <div class="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-neon-pink to-neon-purple bg-clip-text text-transparent">24/7</div>
+              <div class="text-xs sm:text-sm text-gray-500 mt-1">Support</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right - Floating Cards -->
+        <div class="relative hidden lg:block">
+          <div class="hero-visual">
+            <!-- Main Card -->
+            <div class="glass-card-strong p-8 rounded-3xl relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-neon-purple/10 to-neon-blue/5"></div>
+              <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-neon-purple to-neon-blue flex items-center justify-center shadow-lg shadow-neon-purple/30">
+                    <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-display font-bold text-lg">Growth Dashboard</h3>
+                    <p class="text-gray-400 text-sm">Real-time analytics</p>
+                  </div>
+                </div>
+                <!-- Mini Chart -->
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-400">Instagram Followers</span>
+                    <span class="text-sm font-semibold text-neon-green">+12,450</span>
+                  </div>
+                  <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-neon-purple to-neon-blue rounded-full progress-bar" style="width: 0%" data-width="85%"></div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-400">TikTok Views</span>
+                    <span class="text-sm font-semibold text-neon-green">+89,200</span>
+                  </div>
+                  <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-neon-green to-neon-cyan rounded-full progress-bar" style="width: 0%" data-width="72%"></div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-400">YouTube Subscribers</span>
+                    <span class="text-sm font-semibold text-neon-green">+5,800</span>
+                  </div>
+                  <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-neon-pink to-neon-purple rounded-full progress-bar" style="width: 0%" data-width="60%"></div>
+                  </div>
+                </div>
+                <!-- Live Indicator -->
+                <div class="mt-6 flex items-center gap-2 text-sm text-gray-400">
+                  <span class="w-2 h-2 rounded-full bg-neon-green animate-pulse"></span>
+                  Live • Orders processing
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Notification Cards -->
+            <div class="absolute -top-4 -right-4 glass-card p-4 rounded-2xl float-animation">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-neon-green/20 flex items-center justify-center">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-neon-green"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold">Order Complete!</p>
+                  <p class="text-xs text-gray-400">5K IG Followers delivered</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute -bottom-4 -left-4 glass-card p-4 rounded-2xl float-animation-delayed">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-neon-purple/20 flex items-center justify-center">
+                  <i data-lucide="shield-check" class="w-5 h-5 text-neon-purple"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold">100% Safe</p>
+                  <p class="text-xs text-gray-400">No password required</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block">
+      <div class="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
+        <div class="w-1 h-3 rounded-full bg-white/40 animate-scroll-indicator"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRUSTED PLATFORMS ========== -->
+  <section class="relative py-12 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-sm text-gray-500 mb-8 uppercase tracking-widest">Services Available For</p>
+      <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-12 lg:gap-16 opacity-50">
+        <div class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i><span class="font-medium hidden sm:inline">Instagram</span></div>
+        <div class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"><i data-lucide="youtube" class="w-6 h-6"></i><span class="font-medium hidden sm:inline">YouTube</span></div>
+        <div class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"><i data-lucide="twitter" class="w-6 h-6"></i><span class="font-medium hidden sm:inline">Twitter / X</span></div>
+        <div class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i><span class="font-medium hidden sm:inline">Facebook</span></div>
+        <div class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"><i data-lucide="music" class="w-6 h-6"></i><span class="font-medium hidden sm:inline">TikTok</span></div>
+        <div class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"><i data-lucide="tv" class="w-6 h-6"></i><span class="font-medium hidden sm:inline">Netflix</span></div>
+        <div class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"><i data-lucide="play-circle" class="w-6 h-6"></i><span class="font-medium hidden sm:inline">Spotify</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES SECTION ========== -->
+  <section id="services" class="relative py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-blue/10 border border-neon-blue/20 text-neon-blue text-sm font-medium mb-4 scroll-animate">
+          <i data-lucide="layers" class="w-4 h-4"></i>
+          Our Services
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4 scroll-animate">
+          Everything You Need to
+          <span class="bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent">Grow Online</span>
+        </h2>
+        <p class="text-gray-400 text-lg scroll-animate">Premium digital services at the best prices in Nepal. Instant delivery, real results.</p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service Card 1 -->
+        <div class="service-card glass-card rounded-3xl p-6 sm:p-8 group scroll-animate">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="instagram" class="w-7 h-7 text-pink-400"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold mb-2 group-hover:text-neon-purple transition-colors">Instagram Growth</h3>
+          <p class="text-gray-400 text-sm mb-5">Followers, Likes, Views, Comments, Story Views, Reels Views & more.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Followers</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Likes</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Reels</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Stories</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Starting from</span>
+            <span class="text-lg font-display font-bold text-neon-green">Rs. 99</span>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card glass-card rounded-3xl p-6 sm:p-8 group scroll-animate">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="youtube" class="w-7 h-7 text-red-400"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold mb-2 group-hover:text-red-400 transition-colors">YouTube Growth</h3>
+          <p class="text-gray-400 text-sm mb-5">Subscribers, Views, Watch Hours, Likes, Comments & channel growth packages.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Subscribers</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Views</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Watch Hours</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Starting from</span>
+            <span class="text-lg font-display font-bold text-neon-green">Rs. 149</span>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card glass-card rounded-3xl p-6 sm:p-8 group scroll-animate">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="music" class="w-7 h-7 text-cyan-400"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold mb-2 group-hover:text-cyan-400 transition-colors">TikTok Growth</h3>
+          <p class="text-gray-400 text-sm mb-5">Followers, Likes, Views, Shares & viral boost packages for TikTok.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Followers</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Likes</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Views</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Starting from</span>
+            <span class="text-lg font-display font-bold text-neon-green">Rs. 79</span>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card glass-card rounded-3xl p-6 sm:p-8 group scroll-animate">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="facebook" class="w-7 h-7 text-blue-400"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold mb-2 group-hover:text-blue-400 transition-colors">Facebook Growth</h3>
+          <p class="text-gray-400 text-sm mb-5">Page Likes, Followers, Post Likes, Views, Comments & group members.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Page Likes</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Followers</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Views</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Starting from</span>
+            <span class="text-lg font-display font-bold text-neon-green">Rs. 99</span>
+          </div>
+        </div>
+
+        <!-- Service Card 5 -->
+        <div class="service-card glass-card rounded-3xl p-6 sm:p-8 group scroll-animate">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-700/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="tv" class="w-7 h-7 text-red-300"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold mb-2 group-hover:text-red-300 transition-colors">OTT Subscriptions</h3>
+          <p class="text-gray-400 text-sm mb-5">Netflix, Amazon Prime, Disney+ Hotstar, HBO Max & more at lowest prices.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Netflix</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Prime</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Hotstar</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Starting from</span>
+            <span class="text-lg font-display font-bold text-neon-green">Rs. 199</span>
+          </div>
+        </div>
+
+        <!-- Service Card 6 -->
+        <div class="service-card glass-card rounded-3xl p-6 sm:p-8 group scroll-animate">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="play-circle" class="w-7 h-7 text-green-400"></i>
+          </div>
+          <h3 class="text-xl font-display font-bold mb-2 group-hover:text-green-400 transition-colors">Spotify & Music</h3>
+          <p class="text-gray-400 text-sm mb-5">Spotify Premium, Plays, Followers, Playlist Placement & music promotion.</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Premium</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Plays</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-gray-300">Followers</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Starting from</span>
+            <span class="text-lg font-display font-bold text-neon-green">Rs. 149</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING SECTION ========== -->
+  <section id="pricing" class="relative py-20 lg:py-28">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-neon-purple/3 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-green/10 border border-neon-green/20 text-neon-green text-sm font-medium mb-4 scroll-animate">
+          <i data-lucide="tag" class="w-4 h-4"></i>
+          Best Prices in Nepal
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4 scroll-animate">
+          Choose Your
+          <span class="bg-gradient-to-r from-neon-green to-neon-cyan bg-clip-text text-transparent">Growth Plan</span>
+        </h2>
+        <p class="text-gray-400 text-lg scroll-animate">Affordable packages for every need. Start small or go big — instant delivery guaranteed.</p>
+      </div>
+
+      <!-- Pricing Toggle -->
+      <div class="flex justify-center mb-12 scroll-animate">
+        <div class="glass-card rounded-2xl p-1.5 flex gap-1">
+          <button class="pricing-tab active px-6 py-2.5 rounded-xl text-sm font-semibold transition-all" data-platform="instagram">Instagram</button>
+          <button class="pricing-tab px-6 py-2.5 rounded-xl text-sm font-semibold transition-all" data-platform="youtube">YouTube</button>
+          <button class="pricing-tab px-6 py-2.5 rounded-xl text-sm font-semibold transition-all" data-platform="tiktok">TikTok</button>
+          <button class="pricing-tab px-6 py-2.5 rounded-xl text-sm font-semibold transition-all" data-platform="facebook">Facebook</button>
+        </div>
+        </div>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div id="pricingCards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Cards will be populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES / WHY US SECTION ========== -->
+  <section id="features" class="relative py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Left Content -->
+        <div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-pink/10 border border-neon-pink/20 text-neon-pink text-sm font-medium mb-4 scroll-animate">
+            <i data-lucide="award" class="w-4 h-4"></i>
+            Why Choose Us
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-6 scroll-animate">
+            Nepal's Most
+            <span class="bg-gradient-to-r from-neon-pink to-neon-purple bg-clip-text text-transparent">Trusted</span>
+            Digital Partner
+          </h2>
+          <p class="text-gray-400 text-lg mb-10 scroll-animate">We're not just another service provider — we're your growth partner. Here's why thousands choose Social Boost Nepal.</p>
+
+          <div class="space-y-6">
+            <div class="flex gap-4 scroll-animate">
+              <div class="w-12 h-12 shrink-0 rounded-2xl bg-neon-green/10 flex items-center justify-center">
+                <i data-lucide="zap" class="w-6 h-6 text-neon-green"></i>
+              </div>
+              <div>
+                <h4 class="font-display font-bold text-lg mb-1">Instant Delivery</h4>
+                <p class="text-gray-400 text-sm">Orders start processing within minutes. Most services are delivered within 0-24 hours.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 scroll-animate">
+              <div class="w-12 h-12 shrink-0 rounded-2xl bg-neon-purple/10 flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-6 h-6 text-neon-purple"></i>
+              </div>
+              <div>
+                <h4 class="font-display font-bold text-lg mb-1">100% Safe & Secure</h4>
+                <p class="text-gray-400 text-sm">No password required. We use safe, compliant methods that protect your account.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 scroll-animate">
+              <div class="w-12 h-12 shrink-0 rounded-2xl bg-neon-blue/10 flex items-center justify-center">
+                <i data-lucide="refresh-cw" class="w-6 h-6 text-neon-blue"></i>
+              </div>
+              <div>
+                <h4 class="font-display font-bold text-lg mb-1">Refill Guarantee</h4>
+                <p class="text-gray-400 text-sm">If followers drop, we refill them — free of charge. Your growth is our commitment.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 scroll-animate">
+              <div class="w-12 h-12 shrink-0 rounded-2xl bg-neon-pink/10 flex items-center justify-center">
+                <i data-lucide="headphones" class="w-6 h-6 text-neon-pink"></i>
+              </div>
+              <div>
+                <h4 class="font-display font-bold text-lg mb-1">24/7 WhatsApp Support</h4>
+                <p class="text-gray-400 text-sm">Our Nepali support team is available around the clock on WhatsApp for any queries.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right - Feature Cards Grid -->
+        <div class="grid grid-cols-2 gap-4 sm:gap-6">
+          <div class="glass-card rounded-3xl p-6 text-center group scroll-animate hover:border-neon-green/30">
+            <div class="text-4xl sm:text-5xl font-display font-bold bg-gradient-to-r from-neon-green to-neon-cyan bg-clip-text text-transparent mb-2 counter" data-target="99">0</div>
+            <div class="text-sm text-gray-400">% Uptime</div>
+          </div>
+          <div class="glass-card rounded-3xl p-6 text-center group scroll-animate hover:border-neon-purple/30">
+            <div class="text-4xl sm:text-5xl font-display font-bold bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent mb-2">0-1h</div>
+            <div class="text-sm text-gray-400">Delivery Speed</div>
+          </div>
+          <div class="glass-card rounded-3xl p-6 text-center group scroll-animate hover:border-neon-blue/30">
+            <div class="text-4xl sm:text-5xl font-display font-bold bg-gradient-to-r from-neon-blue to-neon-cyan bg-clip-text text-transparent mb-2 counter" data-target="500">0</div>
+            <div class="text-sm text-gray-400">Daily Orders</div>
+          </div>
+          <div class="glass-card rounded-3xl p-6 text-center group scroll-animate hover:border-neon-pink/30">
+            <div class="text-4xl sm:text-5xl font-display font-bold bg-gradient-to-r from-neon-pink to-neon-purple bg-clip-text text-transparent mb-2 counter" data-target="4">0</div>
+            <div class="text-sm text-gray-400">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEWS SECTION ========== -->
+  <section id="reviews" class="relative py-20 lg:py-28">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-neon-blue/3 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-sm font-medium mb-4 scroll-animate">
+          <i data-lucide="star" class="w-4 h-4"></i>
+          Customer Reviews
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4 scroll-animate">
+          Loved by
+          <span class="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Thousands</span>
+          in Nepal
+        </h2>
+        <p class="text-gray-400 text-lg scroll-animate">Real feedback from real customers who grew their social media with us.</p>
+      </div>
+
+      <!-- Reviews Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass-card rounded-3xl p-6 scroll-animate hover:border-neon-purple/20">
+          <div class="flex items-center gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 text-sm mb-5">"Best service in Nepal! Got 5K Instagram followers in just 2 hours. Quality is amazing and none dropped even after a month. Highly recommended!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon-purple to-neon-blue flex items-center justify-center text-sm font-bold">A</div>
+            <div>
+              <p class="text-sm font-semibold">Aarav Sharma</p>
+              <p class="text-xs text-gray-500">Instagram • 5K Followers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 scroll-animate hover:border-neon-green/20">
+          <div class="flex items-center gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 text-sm mb-5">"I bought Netflix subscription from here and it's been working perfectly for 6 months. Way cheaper than paying directly. Amazing value!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon-green to-neon-cyan flex items-center justify-center text-sm font-bold">S</div>
+            <div>
+              <p class="text-sm font-semibold">Srijana Thapa</p>
+              <p class="text-xs text-gray-500">Netflix • Premium Plan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 scroll-animate hover:border-neon-blue/20">
+          <div class="flex items-center gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 text-sm mb-5">"My YouTube channel got 1K subscribers and 4000 watch hours in just 3 days! Monetization enabled. This service changed my life. 🙏"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center text-sm font-bold">R</div>
+            <div>
+              <p class="text-sm font-semibold">Rajesh Karki</p>
+              <p class="text-xs text-gray-500">YouTube • Monetization</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 scroll-animate hover:border-neon-pink/20">
+          <div class="flex items-center gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 text-sm mb-5">"TikTok views were delivered instantly! My video went viral with 50K views. The support team on WhatsApp is super responsive. Love it!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon-pink to-neon-purple flex items-center justify-center text-sm font-bold">P</div>
+            <div>
+              <p class="text-sm font-semibold">Priya Maharjan</p>
+              <p class="text-xs text-gray-500">TikTok • 50K Views</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 scroll-animate hover:border-neon-cyan/20">
+          <div class="flex items-center gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 text-sm mb-5">"I've been using Social Boost Nepal for my business page. Facebook page likes and engagement increased massively. Best ROI for my marketing budget!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon-cyan to-neon-green flex items-center justify-center text-sm font-bold">B</div>
+            <div>
+              <p class="text-sm font-semibold">Bikash Adhikari</p>
+              <p class="text-xs text-gray-500">Facebook • Business Page</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 scroll-animate hover:border-yellow-400/20">
+          <div class="flex items-center gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 text-sm mb-5">"Spotify Premium at just Rs. 199/month? Unbelievable! Working perfectly. I've also bought Instagram likes multiple times. Always satisfied! 🎵"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center text-sm font-bold">N</div>
+            <div>
+              <p class="text-sm font-semibold">Nisha Rai</p>
+              <p class="text-xs text-gray-500">Spotify • Premium Plan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ORDER / CTA SECTION ========== -->
+  <section id="order" class="relative py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative rounded-[2rem] overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-neon-purple/20 via-dark-700 to-neon-blue/20"></div>
+        <div class="absolute inset-0 glass-card-strong"></div>
+
+        <div class="relative z-10 p-8 sm:p-12 lg:p-16">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <!-- Left -->
+            <div>
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-green/10 border border-neon-green/20 text-neon-green text-sm font-medium mb-6 scroll-animate">
+                <i data-lucide="rocket" class="w-4 h-4"></i>
+                Ready to Grow?
+              </div>
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-6 scroll-animate">
+                Place Your Order
+                <span class="bg-gradient-to-r from-neon-green to-neon-cyan bg-clip-text text-transparent">in Minutes</span>
+              </h2>
+              <p class="text-gray-400 text-lg mb-8 scroll-animate">
+                Select your service, choose your package, and make payment via eSewa, Khalti, or Bank Transfer. Delivery starts instantly!
+              </p>
+
+              <!-- Payment Methods -->
+              <div class="flex flex-wrap gap-3 mb-8 scroll-animate">
+                <div class="glass-card px-4 py-2 rounded-xl flex items-center gap-2">
+                  <i data-lucide="wallet" class="w-4 h-4 text-neon-green"></i>
+                  <span class="text-sm">eSewa</span>
+                </div>
+                <div class="glass-card px-4 py-2 rounded-xl flex items-center gap-2">
+                  <i data-lucide="credit-card" class="w-4 h-4 text-neon-purple"></i>
+                  <span class="text-sm">Khalti</span>
+                </div>
+                <div class="glass-card px-4 py-2 rounded-xl flex items-center gap-2">
+                  <i data-lucide="landmark" class="w-4 h-4 text-neon-blue"></i>
+                  <span class="text-sm">Bank Transfer</span>
+                </div>
+                <div class="glass-card px-4 py-2 rounded-xl flex items-center gap-2">
+                  <i data-lucide="smartphone" class="w-4 h-4 text-neon-pink"></i>
+                  <span class="text-sm">Mobile Banking</span>
+                </div>
+              </div>
+
+              <!-- WhatsApp CTA -->
+              <a href="https://wa.me/9779843022602?text=Hi!%20I%20want%20to%20place%20an%20order%20for%20social%20media%20services." target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-green-500 to-green-600 text-white font-display font-bold text-lg shadow-lg shadow-green-500/30 hover:shadow-green-500/50 hover:scale-105 transition-all duration-300 scroll-animate">
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+                Order via WhatsApp
+              </a>
+            </div>
+
+            <!-- Right - Quick Order Form -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 scroll-animate">
+              <h3 class="font-display font-bold text-xl mb-6 flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-neon-purple"></i>
+                Quick Order
+              </h3>
+              <form id="orderForm" class="space-y-4">
+                <div>
+                  <label class="text-sm text-gray-400 mb-1.5 block">Full Name</label>
+                  <input type="text" placeholder="Your name" class="form-input" required />
+                </div>
+                <div>
+                  <label class="text-sm text-gray-400 mb-1.5 block">WhatsApp Number</label>
+                  <input type="tel" placeholder="+977 98XXXXXXXX" class="form-input" required />
+                </div>
+                <div>
+                  <label class="text-sm text-gray-400 mb-1.5 block">Select Service</label>
+                  <select class="form-input" required>
+                    <option value="">Choose a service...</option>
+                    <option>Instagram Followers</option>
+                    <option>Instagram Likes</option>
+                    <option>YouTube Subscribers</option>
+                    <option>YouTube Views</option>
+                    <option>TikTok Followers</option>
+                    <option>TikTok Views</option>
+                    <option>Facebook Page Likes</option>
+                    <option>Netflix Subscription</option>
+                    <option>Spotify Premium</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-sm text-gray-400 mb-1.5 block">Profile / Post Link</label>
+                  <input type="url" placeholder="https://instagram.com/yourprofile" class="form-input" required />
+                </div>
+                <div>
+                  <label class="text-sm text-gray-400 mb-1.5 block">Quantity</label>
+                  <input type="number" placeholder="e.g. 1000" class="form-input" required />
+                </div>
+                <button type="submit" class="btn-primary w-full justify-center btn-lg">
+                  <i data-lucide="send" class="w-5 h-5"></i>
+                  Submit Order
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ SECTION ========== -->
+  <section id="faq" class="relative py-20 lg:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-cyan/10 border border-neon-cyan/20 text-neon-cyan text-sm font-medium mb-4 scroll-animate">
+          <i data-lucide="help-circle" class="w-4 h-4"></i>
+          FAQ
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4 scroll-animate">
+          Frequently Asked
+          <span class="bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">Questions</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-animate" data-faq>
+          <button class="faq-question w-full flex items-center justify-between p-6 text-left">
+            <span class="font-display font-semibold text-lg pr-4">Is it safe to buy followers and likes?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300 faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">Yes, absolutely! We use safe and compliant methods to deliver all our services. We never ask for your password, and all followers/likes come from real-looking accounts. Your account safety is our #1 priority.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-animate" data-faq>
+          <button class="faq-question w-full flex items-center justify-between p-6 text-left">
+            <span class="font-display font-semibold text-lg pr-4">How fast is the delivery?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300 faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">Most orders start processing within 0-30 minutes and are completed within 0-24 hours depending on the service and quantity. Large orders may take up to 48 hours. We always aim for the fastest delivery possible.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-animate" data-faq>
+          <button class="faq-question w-full flex items-center justify-between p-6 text-left">
+            <span class="font-display font-semibold text-lg pr-4">What payment methods do you accept?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300 faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">We accept eSewa, Khalti, Bank Transfer (NIC Asia, Global IME, Nabil), and all major mobile banking apps. Cash on delivery is also available for OTT subscriptions within Kathmandu Valley.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-animate" data-faq>
+          <button class="faq-question w-full flex items-center justify-between p-6 text-left">
+            <span class="font-display font-semibold text-lg pr-4">Do you offer refill if followers drop?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300 faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">Yes! We offer a free refill guarantee on most services. If you experience any drops within the guarantee period (usually 30-90 days depending on the service), just contact us on WhatsApp and we'll refill them at no extra cost.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-animate" data-faq>
+          <button class="faq-question w-full flex items-center justify-between p-6 text-left">
+            <span class="font-display font-semibold text-lg pr-4">How do I place an order?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300 faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">Simply fill out the Quick Order form above, or message us directly on WhatsApp with your service requirement, profile link, and preferred payment method. We'll send you a payment link and start processing your order immediately after confirmation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="relative py-20 lg:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="relative rounded-[2rem] overflow-hidden p-8 sm:p-12 lg:p-16">
+        <div class="absolute inset-0 bg-gradient-to-br from-neon-purple/30 via-dark-700 to-neon-blue/30"></div>
+        <div class="absolute inset-0 glass-card-strong"></div>
+        <!-- Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-purple/20 rounded-full blur-[100px]"></div>
+
+        <div class="relative z-10">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-6 scroll-animate">
+            Ready to Go
+            <span class="bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent">Viral?</span>
+          </h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8 scroll-animate">
+            Join 10,000+ Nepali creators and businesses who trust Social Boost Nepal for their digital growth. Start today and see results in minutes!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center scroll-animate">
+            <a href="#order" class="btn-primary btn-lg group">
+              <i data-lucide="rocket" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
+              Get Started Now
+            </a>
+            <a href="https://wa.me/9779843022602" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-green-500/10 border border-green-500/20 text-green-400 font-display font-semibold hover:bg-green-500/20 transition-all duration-300">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="relative border-t border-white/5 py-12 lg:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-purple to-neon-blue flex items-center justify-center shadow-lg shadow-neon-purple/30">
+              <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <span class="font-display font-bold text-white">SOCIAL BOOST</span>
+              <span class="font-display font-bold text-neon-purple"> NEPAL</span>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-4">Nepal's #1 digital growth platform. Trusted by 10,000+ customers for social media services and OTT subscriptions.</p>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 rounded-xl bg-glass-light border border-white/5 flex items-center justify-center hover:bg-glass-medium hover:border-neon-purple/20 transition-all">
+              <i data-lucide="facebook" class="w-4 h-4"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-glass-light border border-white/5 flex items-center justify-center hover:bg-glass-medium hover:border-neon-purple/20 transition-all">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-glass-light border border-white/5 flex items-center justify-center hover:bg-glass-medium hover:border-neon-purple/20 transition-all">
+              <i data-lucide="youtube" class="w-4 h-4"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-glass-light border border-white/5 flex items-center justify-center hover:bg-glass-medium hover:border-neon-purple/20 transition-all">
+              <i data-lucide="twitter" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="font-display font-bold mb-4">Services</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#services" class="text-gray-400 text-sm hover:text-white transition-colors">Instagram Growth</a></li>
+            <li><a href="#services" class="text-gray-400 text-sm hover:text-white transition-colors">YouTube Growth</a></li>
+            <li><a href="#services" class="text-gray-400 text-sm hover:text-white transition-colors">TikTok Growth</a></li>
+            <li><a href="#services" class="text-gray-400 text-sm hover:text-white transition-colors">Facebook Growth</a></li>
+            <li><a href="#services" class="text-gray-400 text-sm hover:text-white transition-colors">OTT Subscriptions</a></li>
+            <li><a href="#services" class="text-gray-400 text-sm hover:text-white transition-colors">Spotify Premium</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-display font-bold mb-4">Company</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#reviews" class="text-gray-400 text-sm hover:text-white transition-colors">Reviews</a></li>
+            <li><a href="#faq" class="text-gray-400 text-sm hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-display font-bold mb-4">Contact Us</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <i data-lucide="message-circle" class="w-4 h-4 text-neon-green"></i>
+              WhatsApp: +977 9843022602
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <i data-lucide="mail" class="w-4 h-4 text-neon-purple"></i>
+              utsavorignals@gmail.com
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <i data-lucide="map-pin" class="w-4 h-4 text-neon-blue"></i>
+              Kathmandu, Nepal
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <i data-lucide="clock" class="w-4 h-4 text-neon-pink"></i>
+              24/7 Support Available
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-sm">&copy; 2025 Social Boost Nepal. All rights reserved.</p>
+        <p class="text-gray-600 text-xs">Made with ❤️ in Nepal</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/9779843022602?text=Hi!%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank" id="whatsappBtn" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg shadow-green-500/30 hover:shadow-green-500/50 hover:scale-110 transition-all duration-300 group">
+    <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+    <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-ping"></span>
+    <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full"></span>
+  </a>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed top-24 right-6 z-50 glass-card-strong rounded-2xl p-4 max-w-sm transform translate-x-[120%] transition-transform duration-500">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-neon-green/20 flex items-center justify-center shrink-0">
+        <i data-lucide="check-circle" class="w-5 h-5 text-neon-green"></i>
+      </div>
+      <div>
+        <p class="text-sm font-semibold" id="toastTitle">Success!</p>
+        <p class="text-xs text-gray-400" id="toastMessage">Your message has been sent.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
